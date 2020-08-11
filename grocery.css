@@ -1,0 +1,98 @@
+.title{
+	text-align: center;
+}
+
+/* Flex container styling */
+.flex-container{
+	display:flex;
+	flex-flow:wrap;
+	flex-direction:row;
+	justify-content:space-around;
+	background-color: white;
+	transition: transform 0.2s;
+	/*width:90%;*/
+	/*margin-left: 100px;
+	margin-right: 100px;*/
+}
+
+/* Styling of each 8 boxes within flex container*/		
+.flex-container > .child-holder {
+	background-color: #FFF4D5;
+	width:220px;
+	margin: 30px;
+	font-size: 15px;
+	border-bottom: 3px solid #E17055;
+	border-right: 3px solid #E17055;
+	padding-right:5px;
+	line-height: 20px;
+}
+
+/* Adding transition and hover animations on each 8 boxes */		
+.flex-container:hover > .child-holder:hover{
+	background-color: yellow;
+	opacity: 0.9;
+	transform: scale(1.1);			
+	-webkit-transform: scale(1.1);  /* For Safari browser compatibility*/
+	-ms-transform: scale(1.1);		/* For Internet Explorer browser compatibility */
+}
+
+/* Styling horizontal line */
+.child hr{
+	width: 218px;
+	margin-left: 4px;
+	border: 0.5px solid;
+}
+
+.child h4{
+	margin-left: 170px;
+	color:#E17055;
+	margin-top: 3px;
+}
+
+.child h1{
+	margin-bottom: 3px;
+	color:#2C3A47;
+	font-size: 36px;
+	font-family: Arial;
+	margin-left: 4px;
+	font-weight: bold;
+}
+		
+.child .div1{
+	display:inline-block;
+	margin-top:3px;
+	width:200px;
+	margin-left:4px;
+}
+		
+.child .div1 .span1{
+	margin-right: 5px;
+}
+
+.child .div1 .span2{
+	display:inline;
+}
+		
+.child .div2{
+	margin-left:4px;
+	color:#E17055;
+	font-size:15px;
+	position: relative;
+	left:0;
+	bottom: 0;
+}
+
+
+/* Adding responsivenes to the flexbox layout according to different
+browser size windows */
+@media screen and (max-width: 767px and min-width: 320px){
+	.flex-container{
+		width:40%;
+	}
+}
+
+@media screen and (min-width: 768px and max-width: 1200px){
+	.flex-container{
+		width:90%;
+	}
+}

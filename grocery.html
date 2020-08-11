@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Grocery List of items</title>
+	<link rel="stylesheet" type="text/css" href="grocery.css">
+	<script type="text/javascript" src="grocery.json"></script>
+</head>
+<body>
+
+	<h1 class="title"> Grocery Cart Responsive Display</h1>
+
+	<!-- Creating flex container to append 8 objects from array of JSON file-->
+	<div class="flex-container">
+	</div>
+
+	<script>
+		// Read data from JSON file into the variable local_data.
+		var local_data = grocery;
+
+		// Map each object from the array to retrieve its properties.
+		local_data.forEach(appendNewThings);
+
+		// This function is used to create element and append within flex container element
+		function appendNewThings(jsonText){
+
+			// container  and newDiv are the main div element inside which all other elements will be appended
+			var container = document.createElement("div");
+			container.className = "child-holder";
+
+			// Outer div (container) to append each object's HTML structure within flex container
+			// Inner div (newDiv) to create structure.
+			var newDiv = document.createElement("div");
+			newDiv.className = "child";
+
+			// Creating structure of the object within HTML format.
+			var row_data = '';
+			row_data += '<h4>' + 
+						'Qty:' + '<span>'  + jsonText["qty"] + '</span>' 
+						+ '</h4>' +
+						'<h1>' + jsonText["item"] + '</h1>' +
+						'<hr>' + 
+						'<div class="div1">' + '<span class="span1">' + jsonText["brand"] + ' ' + '</span>' + '<span class="span2">' + jsonText["type"]+ '</span>' + '</div>' + '<div class="div2">' + jsonText["category"] + '</div>';
+
+			
+			newDiv.innerHTML = row_data;
+			container.appendChild(newDiv);
+
+			// Appending each object within flex-container.
+			document.getElementsByClassName("flex-container")[0].appendChild(container);
+		};
+	</script>
+</body>
+</html>
