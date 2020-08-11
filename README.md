@@ -1,4 +1,4 @@
-                                                              # Grocery-App UI 
+                                               # Grocery-App UI 
                                                               
  Implemented an responsive UI for grocery list of items with the kind of brand, category, quantity of item ,etc in an flex-box CSS.
  Added hovering and transition CSS animation on the 8 object boxes of flex box container.
